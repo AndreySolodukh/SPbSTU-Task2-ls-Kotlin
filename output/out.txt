@@ -1,0 +1,9 @@
+1. В input лежит вся моя корзина, лучше ничего не открывать : size - 0 Bytes; last modification - Thu Apr 18 00:48:29 MSK 2019; properties - RWX
+adder1.qar : size - 16 Kb, 159 Bytes; last modification - Sun Mar 24 14:21:24 MSK 2019; properties - RWX
+Blank.docx : size - 29 Kb, 138 Bytes; last modification - Sun Mar 24 15:46:19 MSK 2019; properties - RWX
+EmptyDirectory : size - 0 Bytes; last modification - Mon Apr 15 14:16:42 MSK 2019; properties - RWX
+ImmaOnlyRead.txt : size - 0 Bytes; last modification - Wed Apr 17 03:55:09 MSK 2019; properties - RWX
+math.html : size - 46 Kb, 320 Bytes; last modification - Tue Jan 22 20:38:24 MSK 2019; properties - RWX
+tmb_25708_6017.jpg : size - 141 Kb, 580 Bytes; last modification - Sun Dec 23 19:57:06 MSK 2018; properties - RWX
+VoicemodSetup.exe : size - 17 Mb, 322 Kb, 416 Bytes; last modification - Sat Mar 23 19:16:10 MSK 2019; properties - RWX
+ФЫЗЫКАЛ ЭДУКАТИОН.txt : size - 581 Kb, 103 Bytes; last modification - Sat Mar 09 15:39:29 MSK 2019; properties - RWX
