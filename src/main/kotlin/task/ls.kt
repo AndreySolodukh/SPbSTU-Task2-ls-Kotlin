@@ -58,7 +58,7 @@ fun info(input: File, long: Boolean, human: Boolean): String {
             append(if (input.canWrite()) 1 else 0)
             append(if (input.canExecute()) 1 else 0)
         }
-        sum += " - ${input.length()} bytes; ${input.lastModified()} modified; $properties"
+        sum += " - ${input.length() / 8} bytes; ${input.lastModified()} modified; $properties"
     }
 
     if (human) {

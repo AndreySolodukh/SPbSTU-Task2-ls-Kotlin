@@ -28,7 +28,7 @@ class Ls {
                         "modification - Tue Jan 22 20:38:24 MSK 2019; properties - RWX",
                 info(File("C:\\Users\\solod\\IdeaProjects\\ls\\input\\math.html"),
                         false, true))
-        assertEquals("Blank.docx - 29834 bytes; 1553431579769 modified; 111",
+        assertEquals("Blank.docx - 3729 bytes; 1553431579769 modified; 111",
                 info(File("C:\\Users\\solod\\IdeaProjects\\ls\\input\\Blank.docx"),
                         true, false))
     }
@@ -72,16 +72,16 @@ class Ls {
         main(arrayOf("-r", "-o", "C:\\Users\\solod\\IdeaProjects\\ls\\output\\out.txt", "-l",
                 "C:\\Users\\solod\\IdeaProjects\\ls\\input"))
         assertFileContent("C:\\Users\\solod\\IdeaProjects\\ls\\output\\out.txt",
-                "ФЫЗЫКАЛ ЭДУКАТИОН.txt - 595047 bytes; 1552135169576 modified; 111\n" +
-                        "VoicemodSetup.exe - 18155936 bytes; 1553357770458 modified; 111\n" +
-                        "tmb_25708_6017.jpg - 144964 bytes; 1545584226013 modified; 111\n" +
-                        "math.html - 47424 bytes; 1548178704438 modified; 111\n" +
+                "ФЫЗЫКАЛ ЭДУКАТИОН.txt - 74380 bytes; 1552135169576 modified; 111\n" +
+                        "VoicemodSetup.exe - 2269492 bytes; 1553357770458 modified; 111\n" +
+                        "tmb_25708_6017.jpg - 18120 bytes; 1545584226013 modified; 111\n" +
+                        "math.html - 5928 bytes; 1548178704438 modified; 111\n" +
                         "ImmaOnlyRead.txt - 0 bytes; 1555462509287 modified; 111\n" +
                         "EmptyDirectory - 0 bytes; 1555327002647 modified; 111\n" +
-                        "Blank.docx - 29834 bytes; 1553431579769 modified; 111\n" +
-                        "adder1.qar - 16543 bytes; 1553426484592 modified; 111\n" +
-                        "1. В input лежит вся моя корзина, лучше ничего не открывать - 0 bytes; " +
-                        "1555537709898 modified; 111")
+                        "Blank.docx - 3729 bytes; 1553431579769 modified; 111\n" +
+                        "adder1.qar - 2067 bytes; 1553426484592 modified; 111\n" +
+                        "1. В input лежит вся моя корзина, лучше ничего не открывать - " +
+                        "0 bytes; 1555537709898 modified; 111")
 
         main(arrayOf("-h", "-o", "C:\\Users\\solod\\IdeaProjects\\ls\\output\\out.txt",
                 "C:\\Users\\solod\\IdeaProjects\\ls\\input"))
