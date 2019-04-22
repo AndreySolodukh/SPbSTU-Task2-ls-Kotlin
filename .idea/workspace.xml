@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="05063adf-d655-4dd5-b53f-e2803f8ebfb2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/task/lsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/task/lsTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,14 +36,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="kt" value="63" />
-          <entry key="txt" value="161" />
+          <entry key="kt" value="64" />
+          <entry key="txt" value="182" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Kotlin" value="63" />
-          <entry key="PLAIN_TEXT" value="161" />
+          <entry key="Kotlin" value="64" />
+          <entry key="PLAIN_TEXT" value="182" />
         </counts>
       </usages-collector>
     </session>
@@ -74,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/task/lsTest.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1768">
@@ -86,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/task/ParserTest.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#14#181#0" expanded="true" />
               </folding>
@@ -117,10 +116,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/kotlin/task/InvalidCommandException.java" />
         <option value="$PROJECT_DIR$/src/main/kotlin/task/Parser.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/task/ParserTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/task/InvalidCommandException.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/task/ls.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/task/lsTest.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/task/ParserTest.kt" />
       </list>
     </option>
   </component>
@@ -199,7 +198,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555931888936" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555932334882" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -221,7 +220,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParserTest">
+  <component name="RunManager" selected="JUnit.Ls">
     <configuration name="Ls" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ls" />
       <extension name="coverage">
@@ -304,11 +303,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ParserTest" />
         <item itemvalue="JUnit.Ls" />
+        <item itemvalue="JUnit.Ls.outFileTest" />
+        <item itemvalue="JUnit.ParserTest" />
         <item itemvalue="JUnit.Ls.infoTest" />
         <item itemvalue="Kotlin.task.LsKt" />
-        <item itemvalue="JUnit.Ls.outFileTest" />
       </list>
     </recent_temporary>
   </component>
@@ -324,7 +323,7 @@
       <updated>1555547533985</updated>
       <workItem from="1555547537135" duration="895000" />
       <workItem from="1555882912497" duration="1024000" />
-      <workItem from="1555930358498" duration="1506000" />
+      <workItem from="1555930358498" duration="1802000" />
     </task>
     <task id="LOCAL-00001" summary="var. 1.01 - теперь при использовании флага &quot;-l&quot; размер выводится в байтах">
       <created>1555883262880</created>
@@ -340,16 +339,17 @@
       <option name="project" value="LOCAL" />
       <updated>1555931389625</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ver. 1.3 - изменения в lsTest">
+      <created>1555931926670</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555931926670</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Ls - 2019.04.22 at 00h 43m 07s.xml">
-      <configuration name="Ls" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Ls_infoTest - 2019.04.22 at 00h 43m 53s.xml">
-      <configuration name="Ls.infoTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Ls_outFileTest - 2019.04.22 at 00h 44m 18s.xml">
       <configuration name="Ls.outFileTest" configurationId="JUnit" />
     </history-entry>
@@ -374,9 +374,15 @@
     <history-entry file="ParserTest - 2019.04.22 at 14h 08m 58s.xml">
       <configuration name="ParserTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Ls - 2019.04.22 at 14h 18m 02s.xml">
+      <configuration name="Ls" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest - 2019.04.22 at 14h 18m 10s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3425000" />
+    <option name="totallyTimeSpent" value="3721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -447,7 +453,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="var. 1.01 - теперь при использовании флага &quot;-l&quot; размер выводится в байтах" />
     <MESSAGE value="ver. 1.2 - исправлен lsTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver. 1.2 - исправлен lsTest" />
+    <MESSAGE value="ver. 1.3 - изменения в lsTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver. 1.3 - изменения в lsTest" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/task/InvalidCommandException.java" />
@@ -475,22 +482,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/task/ParserTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#14#181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/task/lsTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1768">
           <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
           <folding>
             <element signature="e#14#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/task/ParserTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#14#181#0" expanded="true" />
           </folding>
         </state>
       </provider>
