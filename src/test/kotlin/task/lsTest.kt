@@ -6,11 +6,11 @@ import kotlin.test.assertEquals
 
 class Ls {
 
-    /**
-     * Я не знаю, как проверить, правду ли программа пишет в properties.
-     * Не нашел пока ни одного файла, у которого бы не было хотя бы одного из прав.
-     * Даже файл без расширения можно прочитать, переписать и исполнить.
-     **/
+    private fun clear(name: String) {
+        val file = File(name).bufferedWriter()
+        file.write("")
+        file.close()
+    }
 
     private fun assertFileContent(name: String, expectedContent: String) {
         val file = File(name)
@@ -31,17 +31,12 @@ class Ls {
         assertEquals("Blank.docx - 339 bytes; 1553431579769 modified; 111",
                 info(File("C:\\Users\\solod\\IdeaProjects\\ls\\input\\Blank.docx"),
                         true, false))
+
+        clear("C:\\Users\\solod\\IdeaProjects\\ls\\output\\out.txt")
     }
 
     @Test
     fun outFileTest() {
-        // Функция main сама по себе чистит output-файл, но для красоты можно добавить:
-        //  fun clear(name: String) {
-        //      val file = File(name).bufferedWriter()
-        //      file.write("")
-        //      file.close()
-        //  }
-        //  clear("C:\\Users\\solod\\IdeaProjects\\ls\\output\\out.txt")
 
         main(arrayOf("-o", "C:\\Users\\solod\\IdeaProjects\\ls\\output\\out.txt",
                 "C:\\Users\\solod\\IdeaProjects\\ls\\input"))
@@ -105,5 +100,6 @@ class Ls {
                         "ФЫЗЫКАЛ ЭДУКАТИОН.txt : size - 581 Kb, 103 Bytes; " +
                         "last modification - Sat Mar 09 15:39:29 MSK 2019; properties - RWX")
 
+        clear("C:\\Users\\solod\\IdeaProjects\\ls\\output\\out.txt")
     }
 }
