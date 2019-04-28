@@ -1,7 +1,8 @@
 package task
 
+import java.io.BufferedWriter
 import java.io.File
-import java.util.* // для Date
+import java.util.*
 
 fun main(input: Array<String>) {
     try {
@@ -10,21 +11,21 @@ fun main(input: Array<String>) {
         val start = File(parse.inputFile)
 
         if (!start.exists()) {
-            println("Incorrect input name")
+            println("Incorrect input")
             return
         }
-        if (parse.output && (!destination.exists() || destination.isDirectory)) {
-            println("Incorrect output name")
+        if (parse.output && destination.isDirectory) {
+            println("Incorrect output")
             return
         }
 
-        // Заранее: если работа идет над файлом (не директорией),
-        // флаг -r считается бесполезным и поэтому никак не обрабатывается.
+        var writer: BufferedWriter? = null
+        if (parse.output) writer = destination.bufferedWriter()
+
         if (!start.isDirectory) {
             val sum = info(start, parse.long, parse.human)
             if (parse.output) {
-                val writer = destination.bufferedWriter()
-                writer.write(sum)
+                writer!!.write(sum)
                 writer.close()
             } else println(sum)
             return
@@ -35,12 +36,11 @@ fun main(input: Array<String>) {
             sum = sum.sortedBy { it.decapitalize() }
             if (parse.reverse) sum = sum.reversed()
             if (parse.output) {
-                val writer = destination.bufferedWriter()
                 for (elem in sum) {
-                    writer.write(elem)
+                    writer!!.write(elem)
                     writer.newLine()
                 }
-                writer.close()
+                writer!!.close()
             } else for (elem in sum) println(elem)
         }
     } catch (e: InvalidCommandException) {
@@ -48,9 +48,29 @@ fun main(input: Array<String>) {
     }
 }
 
-// А можно не возиться с результатами типа "1 byteS", пажалусто?
+
 fun info(input: File, long: Boolean, human: Boolean): String {
     var sum = input.name
+
+    if (human && long) {
+        val properties = buildString {
+            append(if (input.canRead()) 'R' else '-')
+            append(if (input.canWrite()) 'W' else '-')
+            append(if (input.canExecute()) 'X' else '-')
+        }
+        val size = buildString {
+            var length = input.length()
+            val measures = listOf("B", "Kb", "Mb", "Gb", "Tb")
+            for (i in 0..5) {
+                if (i != 0) insert(0, ", ")
+                insert(0, "${length % 1024} ${measures[i]}")
+                if (length < 1024) break
+                length /= 1024
+            }
+        }
+        sum += " - $size; ${Date(input.lastModified())} modified; $properties"
+        return sum
+    }
 
     if (long) {
         val properties = buildString {
@@ -58,29 +78,16 @@ fun info(input: File, long: Boolean, human: Boolean): String {
             append(if (input.canWrite()) 1 else 0)
             append(if (input.canExecute()) 1 else 0)
         }
-        sum += " - ${input.length() / 8} bytes; ${input.lastModified()} modified; $properties"
-    }
-
-    if (human) {
-        val properties = buildString {
-            append("properties - ")
-            append(if (input.canRead()) 'R' else '-')
-            append(if (input.canWrite()) 'W' else '-')
-            append(if (input.canExecute()) 'X' else '-')
-        }
-        val size = buildString {
-            var length = input.length()
-            val measures = listOf("Bytes", "Kb", "Mb", "Gb", "Tb") // на ближайшие пару лет хватит
-            for (i in 0..5) {
-                if (i != 0) insert(0, ", ")
-                insert(0, "${length % 1024} ${measures[i]}")
-                if (length < 1024) break
-                length /= 1024
+        val measures = listOf("B", "Kb", "Mb", "Gb", "Tb")
+        var length = input.length().toDouble()
+        for (i in 0..4) {
+            if (length >= 1024) length /= 1024
+            else {
+                length = (length * 10).toInt() / 10.0
+                sum += " - $length ${measures[i]}; ${Date(input.lastModified())} modified; $properties"
+                return sum
             }
-            insert(0, "size - ")
-            append(';')
         }
-        sum += " : $size last modification - ${Date(input.lastModified())}; $properties"
     }
     return sum
 }

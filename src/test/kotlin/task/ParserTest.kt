@@ -30,19 +30,13 @@ class ParserTest {
     fun desti() {
         assertEquals("out.file", Parser(arrayOf("-o", "out.file", "in.directory")).destination)
         assertEquals("*", Parser(arrayOf("-l", "-r", "in.directory")).destination)
-        // То, что стоит после "-о" (если это не inputFile) - всегда destination
         assertEquals("-r", Parser(arrayOf("-o", "-r", "in.directory")).destination)
     }
 
     @Test
     fun except() {
         assertThrows(InvalidCommandException::class.java) { Parser(arrayOf()) }
-        assertThrows(InvalidCommandException::class.java)
-        { Parser(arrayOf("-h", "-l", "directory")) }
         assertThrows(InvalidCommandException::class.java) { Parser(arrayOf("-r", "-o", "directory")) }
-
-        Parser(arrayOf("-r", "-o", "-o", "directory"))
-
         assertThrows(InvalidCommandException::class.java) { Parser(arrayOf("-r", "-r", "-h", "directory")) }
 
         //Исключений не появляется, т.к. конструкция правильная
