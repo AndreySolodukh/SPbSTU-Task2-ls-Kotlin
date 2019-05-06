@@ -9,7 +9,6 @@ data class Parser(val input: Array<String>) {
     var human = false
     var reverse = false
     var output = false
-
     init {
         if (input.isEmpty()) throw InvalidCommandException()
         var isDesti = false
@@ -19,7 +18,7 @@ data class Parser(val input: Array<String>) {
                     destination = input[i]
                     isDesti = false
                 }
-                input[i] == "-l" && !long -> long = true
+                input[i] == "-l" && !long ->  long = true
                 input[i] == "-r" && !reverse -> reverse = true
                 input[i] == "-h" && !human -> human = true
                 input[i] == "-o" && !output -> {

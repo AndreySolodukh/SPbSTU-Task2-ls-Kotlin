@@ -2,6 +2,7 @@ package task
 
 import java.io.BufferedWriter
 import java.io.File
+import java.lang.System.out
 import java.util.*
 
 fun main(input: Array<String>) {
@@ -9,7 +10,6 @@ fun main(input: Array<String>) {
         val parse = Parser(input)
         val destination = File(parse.destination)
         val start = File(parse.inputFile)
-
         if (!start.exists()) {
             println("Incorrect input")
             return
@@ -19,30 +19,26 @@ fun main(input: Array<String>) {
             return
         }
 
-        var writer: BufferedWriter? = null
+        var writer: BufferedWriter = out.bufferedWriter()
         if (parse.output) writer = destination.bufferedWriter()
 
         if (!start.isDirectory) {
             val sum = info(start, parse.long, parse.human)
-            if (parse.output) {
-                writer!!.write(sum)
-                writer.close()
-            } else println(sum)
-            return
+            writer.write(sum)
+            writer.close()
         } else {
             val files = start.listFiles()
             var sum = listOf<String>()
             for (elem in files) sum += (info(elem, parse.long, parse.human))
             sum = sum.sortedBy { it.decapitalize() }
             if (parse.reverse) sum = sum.reversed()
-            if (parse.output) {
-                for (elem in sum) {
-                    writer!!.write(elem)
-                    writer.newLine()
-                }
-                writer!!.close()
-            } else for (elem in sum) println(elem)
+            for (elem in sum) {
+                writer.write(elem)
+                writer.newLine()
+            }
         }
+        writer.close()
+        return
     } catch (e: InvalidCommandException) {
         println("Incorrect command")
     }
