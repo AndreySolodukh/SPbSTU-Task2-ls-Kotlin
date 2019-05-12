@@ -54,26 +54,6 @@ fun info(input: File, long: Boolean, human: Boolean): String {
             append(if (input.canWrite()) 'W' else '-')
             append(if (input.canExecute()) 'X' else '-')
         }
-        val size = buildString {
-            var length = input.length()
-            val measures = listOf("B", "Kb", "Mb", "Gb", "Tb")
-            for (i in 0..5) {
-                if (i != 0) insert(0, ", ")
-                insert(0, "${length % 1024} ${measures[i]}")
-                if (length < 1024) break
-                length /= 1024
-            }
-        }
-        sum += " - $size; ${Date(input.lastModified())} modified; $properties"
-        return sum
-    }
-
-    if (long) {
-        val properties = buildString {
-            append(if (input.canRead()) 1 else 0)
-            append(if (input.canWrite()) 1 else 0)
-            append(if (input.canExecute()) 1 else 0)
-        }
         val measures = listOf("B", "Kb", "Mb", "Gb", "Tb")
         var length = input.length().toDouble()
         for (i in 0..4) {
@@ -85,5 +65,15 @@ fun info(input: File, long: Boolean, human: Boolean): String {
             }
         }
     }
+
+    if (long) {
+        val properties = buildString {
+            append(if (input.canRead()) 1 else 0)
+            append(if (input.canWrite()) 1 else 0)
+            append(if (input.canExecute()) 1 else 0)
+        }
+                sum += " - ${input.length()} B; ${Date(input.lastModified())} modified; $properties"
+                return sum
+            }
     return sum
 }
